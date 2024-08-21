@@ -1,0 +1,45 @@
+{
+  "name": "default_ts_hapi_prisma",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "db:create": "dotenv -c '.env' -- node prisma/db.create.js",
+    "db:seed": "node ./prisma/seeds.js",
+    "server:dev": "dotenv -c '.env' concurrently \"npx tsc --watch\" \"nodemon dist/server.js\"",
+    "server": "node dist/server.js",
+    "standalone:dev": "tsc && dotenv -c '.env' node ./dist/standalone.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.11.17",
+    "@types/qs": "^6.9.11",
+    "concurrently": "^8.2.2",
+    "dotenv-cli": "^7.2.1",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2",
+    "@hapi/inert": "^7.1.0",
+    "@hapi/vision": "^7.0.2",
+    "@prisma/client": "^4.15.0",
+    "axios": "^1.6.7",
+    "bcrypt": "^5.1.1",
+    "commander": "^12.0.0",
+    "crypto": "^1.0.1",
+    "hapi": "^18.1.0",
+    "hapi-auth-jwt2": "^10.4.0",
+    "hapi-plugin-websocket": "^2.4.8",
+    "hapi-swagger": "^17.0.0",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3",
+    "prisma": "^5.9.1",
+    "qs": "^6.11.2"
+  }
+}

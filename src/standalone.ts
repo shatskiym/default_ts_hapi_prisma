@@ -1,0 +1,1 @@
+console.log("Hello! This is a standalone code file.")
